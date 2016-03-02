@@ -12,5 +12,4 @@
 + (void)setValue:(id)value forKey:(NSString *)key; //将键值对存储到NSUserDefault中
 + (id)valueForKey:(NSString *)key; //从NSUserDefault中得到key对应的value
 + (BOOL)isNotNull:(id)objc;
-+ (NSString *)stringFromDate:(NSDate *)date;
 @end

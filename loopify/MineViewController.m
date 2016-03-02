@@ -8,7 +8,7 @@
 
 #import "MineViewController.h"
 #import "LoginViewController.h"
-@interface MineViewController ()<UIAlertViewDelegate>
+@interface MineViewController ()<UIAlertViewDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -16,7 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self createView];
     // Do any additional setup after loading the view.
+}
+
+- (void)createView {
+    srand((unsigned)time(0));  //不加这句每次产生的随机数不变
+    int i = rand() % 20;
+    self.userImageBackgroundView.image = [UIImage imageNamed:[NSString stringWithFormat:@"bg%d.jpg",i]];
+    self.userImageView.clipsToBounds = YES;
+    self.userImageView.layer.cornerRadius = self.userImageView.frame.size.width/2;
+    //self.userTableView.tableHeaderView = self.userImageBackgroundView;
+    self.userTableView.delegate = self;
+    self.userTableView.dataSource = self;
+    //self.userImageBackgroundView.frame = CGRectMake(0, 0, 100, 100);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -59,6 +72,49 @@
             break;
     }
 }
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    CGFloat yOffset   = self.userTableView.contentOffset.y;
+    if (yOffset < 0) {
+        CGRect f = self.userImageBackgroundView.frame;
+        f.size.height = -yOffset/5 + 300;
+        //f.origin.y = -yOffset;
+        self.userImageBackgroundView.frame = f;
+        
+    }
+}
+
+#pragma mark UITableViewDataSource,UITableViewDelegate
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+
+    return 1;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    static NSString *userCell = @"userCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:userCell];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:userCell];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+    }
+    
+    return cell;
+    
+}
+
 /*
 #pragma mark - Navigation
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10109" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6qH-NM-acA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="6qH-NM-acA">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Base Tab Bar-->
@@ -133,11 +133,11 @@
             </objects>
             <point key="canvasLocation" x="-1457.5" y="2273.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--热门-->
         <scene sceneID="UZv-HQ-o7o">
             <objects>
                 <navigationController id="tJM-ph-uOc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="EJu-DO-frd">
+                    <tabBarItem key="tabBarItem" title="热门" id="EJu-DO-frd">
                         <inset key="imageInsets" minX="-3" minY="4" maxX="-2" maxY="-8"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u4J-25-bjs">
@@ -220,19 +220,92 @@
                     <view key="view" contentMode="scaleToFill" id="rDa-fa-MIW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0zD-x4-sE7">
+                                <rect key="frame" x="-4" y="368" width="383" height="252"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.21504520220000001" blue="0.1879074107" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aei-bN-9Ih">
+                                <rect key="frame" x="-4" y="64" width="383" height="302"/>
+                                <color key="backgroundColor" red="0.44628264540000001" green="1" blue="0.75785365110000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNi-kj-bng">
+                                <rect key="frame" x="129" y="172" width="118" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="简介" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJd-XV-Uqw">
+                                <rect key="frame" x="16" y="207" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TY-3k-yXo">
+                                <rect key="frame" x="16" y="317" width="61" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="则故事" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRU-Ff-8Bd">
+                                <rect key="frame" x="16" y="341" width="42" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKc-eW-wEQ">
+                                <rect key="frame" x="153" y="317" width="69" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="粉丝人数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gi-kp-qvl">
+                                <rect key="frame" x="153" y="341" width="69" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rR5-uY-BmB">
+                                <rect key="frame" x="298" y="317" width="61" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="已关注" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGw-BR-IZa">
+                                <rect key="frame" x="298" y="341" width="61" height="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="92i-RI-PRJ">
+                                <rect key="frame" x="157" y="98" width="60" height="60"/>
+                                <color key="backgroundColor" red="1" green="0.21504520220000001" blue="0.1879074107" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="fii-sg-nyd"/>
+                    <connections>
+                        <outlet property="attentionNumLabel" destination="rR5-uY-BmB" id="yzv-OW-2Ro"/>
+                        <outlet property="fansNumLabel" destination="AKc-eW-wEQ" id="a7D-aj-gmf"/>
+                        <outlet property="storyNumLabel" destination="2TY-3k-yXo" id="vIU-Tq-w8m"/>
+                        <outlet property="userImageBackgroundView" destination="aei-bN-9Ih" id="hyc-Bq-GAi"/>
+                        <outlet property="userImageView" destination="92i-RI-PRJ" id="CBw-mP-rQY"/>
+                        <outlet property="userNameLabel" destination="JNi-kj-bng" id="RVG-Jh-Ljd"/>
+                        <outlet property="userSummaryLabel" destination="SJd-XV-Uqw" id="FJZ-6q-Txr"/>
+                        <outlet property="userTableView" destination="0zD-x4-sE7" id="zLZ-5c-CNm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Ba-HK-C9J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="857" y="2230"/>
+            <point key="canvasLocation" x="856.5" y="2229.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--今天-->
         <scene sceneID="Nyq-kn-nIt">
             <objects>
                 <navigationController id="shR-Ul-DVh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="mY7-Xr-tNJ">
+                    <tabBarItem key="tabBarItem" title="今天" id="mY7-Xr-tNJ">
                         <inset key="imageInsets" minX="-3" minY="4" maxX="-3" maxY="-8"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNd-D8-D5X">
@@ -247,11 +320,11 @@
             </objects>
             <point key="canvasLocation" x="101" y="728"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--动态-->
         <scene sceneID="Uij-sS-WMz">
             <objects>
                 <navigationController id="svs-1S-bhu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="AlU-Om-yin">
+                    <tabBarItem key="tabBarItem" title="动态" id="AlU-Om-yin">
                         <inset key="imageInsets" minX="-6" minY="4" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y8W-PN-07Q">
@@ -266,11 +339,11 @@
             </objects>
             <point key="canvasLocation" x="77" y="1510"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--我的-->
         <scene sceneID="8pC-C5-GIn">
             <objects>
                 <navigationController id="Rot-YJ-PC0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="AZb-M3-M6r">
+                    <tabBarItem key="tabBarItem" title="我的" id="AZb-M3-M6r">
                         <inset key="imageInsets" minX="-6" minY="4" maxX="0.0" maxY="-8"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Yi-kv-6Fu">

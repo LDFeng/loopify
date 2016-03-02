@@ -13,11 +13,9 @@
 #import "MyTools.h"
 #import "APIDataLoad.h"
 #import "LZWHelp.h"
-#import "UIImageView+WebCache.h"
-#define AllocWithStoryboardID(storyboardId) [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:storyboardId]
-#define HEIGHT [UIScreen mainScreen].bounds.size.height
-#define WIDTH [UIScreen mainScreen].bounds.size.width
+#import "MJRefresh.h"
 
+#define AllocWithStoryboardID(storyboardId) [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:storyboardId]
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 

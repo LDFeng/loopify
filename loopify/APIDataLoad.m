@@ -38,7 +38,6 @@ static APIDataLoad *APIData = nil;
     AVQuery *query = [AVQuery queryWithClassName:@"HotStory"];
     query.limit = 10;
     query.skip = 10*(page-1);
-    [query orderByAscending:@"createdAt"];
     [query findObjectsInBackgroundWithBlock:block];
 }
 
